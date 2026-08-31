@@ -29,7 +29,7 @@ public class NapCatServiceDiscoveryAspect {
     public void getVersionInfoMethod() {}
 
     @Around("getVersionInfoMethod()")
-    public Object aroundSendMethod(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object aroundGetVersionInfoMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         JSONObject result = (JSONObject) joinPoint.proceed();
 
         if (result == null) {
