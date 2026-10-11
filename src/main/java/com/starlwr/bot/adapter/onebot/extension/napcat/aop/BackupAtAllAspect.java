@@ -7,12 +7,12 @@ import com.starlwr.bot.adapter.onebot.model.OneBotSender;
 import com.starlwr.bot.core.enums.PushTargetType;
 import com.starlwr.bot.core.model.Message;
 import com.starlwr.bot.core.plugin.StarBotComponent;
-import com.starlwr.bot.core.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.ProceedingJoinPoint;
+import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
@@ -69,7 +69,7 @@ public class BackupAtAllAspect {
         JSONObject todoParams = new JSONObject();
         todoParams.put("group_id", message.getNum());
 
-        if (StringUtil.isNotBlank(message.getContent())) {
+        if (StringUtils.isNotBlank(message.getContent())) {
             message.addOnSuccessCallback(() -> {
                 todoParams.put("message_id", message.getId());
                 http.setGroupTodo(sender, todoParams);
