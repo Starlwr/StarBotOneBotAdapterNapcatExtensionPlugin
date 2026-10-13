@@ -1,11 +1,11 @@
-package com.starlwr.bot.adapter.onebot.extension.napcat.aop;
+package com.starlwr.bot.adapter.onebot.extension.napcat.fallback;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.starlwr.bot.adapter.onebot.extension.napcat.http.NapcatHttpAdapter;
-import com.starlwr.bot.adapter.onebot.extension.napcat.util.NapcatServiceHolder;
-import com.starlwr.bot.adapter.onebot.model.OneBotSender;
-import com.starlwr.bot.core.enums.PushTargetType;
-import com.starlwr.bot.core.model.Message;
+import com.starlwr.bot.adapter.onebot.config.OneBotSender;
+import com.starlwr.bot.adapter.onebot.extension.napcat.api.NapcatHttpAdapter;
+import com.starlwr.bot.adapter.onebot.extension.napcat.discovery.NapcatServiceHolder;
+import com.starlwr.bot.core.message.Message;
+import com.starlwr.bot.core.message.PushTargetType;
 import com.starlwr.bot.core.plugin.StarBotComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -34,7 +34,7 @@ public class BackupAtAllAspect {
         this.http = http;
     }
 
-    @Pointcut("execution(* com.starlwr.bot.core.sender.StarBotMessageSender.send(..))")
+    @Pointcut("execution(* com.starlwr.bot.core.message.StarBotMessageSender.send(..))")
     public void sendMethod() {}
 
     @Around("sendMethod()")

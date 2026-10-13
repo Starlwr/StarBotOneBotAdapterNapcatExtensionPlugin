@@ -1,6 +1,6 @@
-package com.starlwr.bot.adapter.onebot.extension.napcat.util;
+package com.starlwr.bot.adapter.onebot.extension.napcat.discovery;
 
-import com.starlwr.bot.adapter.onebot.model.OneBotSender;
+import com.starlwr.bot.adapter.onebot.config.OneBotSender;
 import com.starlwr.bot.core.plugin.StarBotComponent;
 
 import java.util.HashMap;

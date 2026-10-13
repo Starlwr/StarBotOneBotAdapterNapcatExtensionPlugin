@@ -1,8 +1,7 @@
-package com.starlwr.bot.adapter.onebot.extension.napcat.aop;
+package com.starlwr.bot.adapter.onebot.extension.napcat.discovery;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.starlwr.bot.adapter.onebot.extension.napcat.util.NapcatServiceHolder;
-import com.starlwr.bot.adapter.onebot.model.OneBotSender;
+import com.starlwr.bot.adapter.onebot.config.OneBotSender;
 import com.starlwr.bot.core.plugin.StarBotComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -25,7 +24,7 @@ public class NapCatServiceDiscoveryAspect {
         this.holder = holder;
     }
 
-    @Pointcut("execution(* com.starlwr.bot.adapter.onebot.http.OneBotHttpAdapter.getVersionInfo(..))")
+    @Pointcut("execution(* com.starlwr.bot.adapter.onebot.api.OneBotHttpAdapter.getVersionInfo(..))")
     public void getVersionInfoMethod() {}
 
     @Around("getVersionInfoMethod()")

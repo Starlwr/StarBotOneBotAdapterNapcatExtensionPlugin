@@ -1,10 +1,9 @@
-package com.starlwr.bot.adapter.onebot.extension.napcat.http;
+package com.starlwr.bot.adapter.onebot.extension.napcat.api;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.starlwr.bot.adapter.onebot.exception.OneBotApiException;
-import com.starlwr.bot.adapter.onebot.extension.napcat.annotation.NapcatApi;
-import com.starlwr.bot.adapter.onebot.model.OneBotSender;
-import com.starlwr.bot.core.util.HttpUtil;
+import com.starlwr.bot.adapter.onebot.api.OneBotApiException;
+import com.starlwr.bot.adapter.onebot.config.OneBotSender;
+import com.starlwr.bot.core.support.http.HttpService;
 import com.starlwr.bot.core.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,9 +17,9 @@ import java.util.Map;
  */
 @Slf4j
 public class NapcatHttpAdapterProxy implements InvocationHandler {
-    private final HttpUtil http;
+    private final HttpService http;
 
-    public NapcatHttpAdapterProxy(HttpUtil http) {
+    public NapcatHttpAdapterProxy(HttpService http) {
         this.http = http;
     }
 

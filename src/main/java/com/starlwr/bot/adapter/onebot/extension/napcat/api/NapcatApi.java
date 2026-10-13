@@ -1,4 +1,4 @@
-package com.starlwr.bot.adapter.onebot.extension.napcat.annotation;
+package com.starlwr.bot.adapter.onebot.extension.napcat.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
