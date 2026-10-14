@@ -56,7 +56,7 @@ public class BackupAtAllAspect {
         OneBotSender sender = holder.getNapcat(message.getPlatform());
 
         JSONObject groupAtAllRemainParams = new JSONObject();
-        groupAtAllRemainParams.put("group_id", message.getNum());
+        groupAtAllRemainParams.put("group_id", Long.parseLong(message.getNum()));
         JSONObject groupAtAllRemainResult = http.getGroupAtAllRemain(sender, groupAtAllRemainParams);
         if (Boolean.TRUE.equals(groupAtAllRemainResult.getBoolean("can_at_all"))) {
             return joinPoint.proceed();
@@ -67,7 +67,7 @@ public class BackupAtAllAspect {
         message.setContent(message.getContent().replace("{at=all}", ""));
 
         JSONObject todoParams = new JSONObject();
-        todoParams.put("group_id", message.getNum());
+        todoParams.put("group_id", Long.parseLong(message.getNum()));
 
         if (StringUtils.isNotBlank(message.getContent())) {
             message.addOnSuccessCallback(() -> {

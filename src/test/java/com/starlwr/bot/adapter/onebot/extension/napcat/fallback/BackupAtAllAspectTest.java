@@ -47,7 +47,7 @@ class BackupAtAllAspectTest {
         factory.setProxyTargetClass(true);
         factory.addAspect(new BackupAtAllAspect(holder, http));
         StarBotMessageSender proxy = factory.getProxy();
-        Message message = Message.create(sender.getName(), PushTargetType.GROUP, 123L, "通知{at=all}").get(0);
+        Message message = Message.create(sender.getName(), PushTargetType.GROUP, "123", "通知{at=all}").get(0);
 
         proxy.send(message);
 
@@ -58,7 +58,10 @@ class BackupAtAllAspectTest {
         message.getOnSuccessCallbacks().forEach(Runnable::run);
         ArgumentCaptor<JSONObject> todoParams = ArgumentCaptor.forClass(JSONObject.class);
         verify(http).setGroupTodo(eq(sender), todoParams.capture());
-        assertEquals(Long.valueOf(123L), todoParams.getValue().getLong("group_id"));
+        assertEquals(123L, todoParams.getValue().get("group_id"));
+        ArgumentCaptor<JSONObject> quotaParams = ArgumentCaptor.forClass(JSONObject.class);
+        verify(http).getGroupAtAllRemain(eq(sender), quotaParams.capture());
+        assertEquals(123L, quotaParams.getValue().get("group_id"));
         assertEquals("message-123", todoParams.getValue().getString("message_id"));
     }
 
@@ -82,7 +85,7 @@ class BackupAtAllAspectTest {
         factory.setProxyTargetClass(true);
         factory.addAspect(new BackupAtAllAspect(holder, http));
         StarBotMessageSender proxy = factory.getProxy();
-        Message message = Message.create(sender.getName(), PushTargetType.GROUP, 123L, "通知{at=all}").get(0);
+        Message message = Message.create(sender.getName(), PushTargetType.GROUP, "123", "通知{at=all}").get(0);
 
         proxy.send(message);
 
