@@ -1,5 +1,6 @@
 .idea/
 target/
 logs/
+debug/
 *.iml
 src/main/resources/application-dev.yml
