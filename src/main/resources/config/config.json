@@ -1,0 +1,29 @@
+{
+  "title": "NapCat",
+  "description": "为 NapCat 机器人提供扩展功能, 支持「@全体成员」次数不足时改为创建群待办",
+  "configurationClass": "com.starlwr.bot.adapter.onebot.extension.napcat.config.OneBotAdapterNapcatExtensionPluginProperties",
+  "basePath": [
+    "starbot",
+    "adapter",
+    "onebot",
+    "extension",
+    "napcat"
+  ],
+  "groups": [
+    {
+      "id": "fallback",
+      "title": "群待办",
+      "description": "「@全体成员」次数不足时, 改为创建群待办提醒群成员",
+      "restartRequired": true,
+      "fields": [
+        {
+          "key": "enable-backup-at-all",
+          "label": "「@全体成员」次数不足时改为创建群待办",
+          "description": "机器人的「@全体成员」次数用完时, 尝试改为创建群待办提醒群成员",
+          "type": "boolean",
+          "springKey": "starbot.adapter.onebot.extension.napcat.enable-backup-at-all"
+        }
+      ]
+    }
+  ]
+}
