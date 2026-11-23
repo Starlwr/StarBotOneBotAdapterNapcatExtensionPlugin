@@ -1,7 +1,7 @@
 package com.starlwr.bot.adapter.onebot.extension.napcat.api;
 
 import com.starlwr.bot.core.plugin.StarBotComponent;
-import com.starlwr.bot.core.support.http.HttpService;
+import com.starlwr.bot.core.http.HttpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 

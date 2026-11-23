@@ -3,7 +3,7 @@ package com.starlwr.bot.adapter.onebot.extension.napcat.api;
 import com.alibaba.fastjson2.JSONObject;
 import com.starlwr.bot.adapter.onebot.api.OneBotApiException;
 import com.starlwr.bot.adapter.onebot.config.OneBotSender;
-import com.starlwr.bot.core.support.http.HttpService;
+import com.starlwr.bot.core.http.HttpService;
 import com.starlwr.bot.core.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 
