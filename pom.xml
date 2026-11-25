@@ -12,7 +12,7 @@
 
     <groupId>com.starlwr</groupId>
     <artifactId>starbot-onebot-adapter-napcat-extension</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.0</version>
     <name>StarBotOneBotAdapterNapcatExtensionPlugin</name>
     <description>OneBot Adapter Napcat Extension Plugin For StarBot</description>
     <url>https://bot.starlwr.com</url>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>com.starlwr</groupId>
             <artifactId>starbot-onebot-adapter</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0.0</version>
         </dependency>
 
         <dependency>
@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>com.starlwr</groupId>
                 <artifactId>starbot-plugin-processor</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.0.0</version>
                 <executions>
                     <execution>
                         <goals>
